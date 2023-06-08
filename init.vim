@@ -62,6 +62,11 @@ autocmd filetype cpp nnoremap <F10> :vsplit term://./%:r<CR>
 autocmd filetype python nnoremap <F9> :w <bar> !python3 %<CR>
 autocmd filetype python nnoremap <F10> :w <bar> vsplit term://python3 %<CR>
 
+nnoremap <F11> :w <bar> vsplit term://python3 -m http.server<CR>
+
+autocmd BufNewFile *.cpp 0r /home/zee/Documents/vims/template/template.cpp
+autocmd BufNewFile *.html 0r /home/zee/Documents/vims/template/template.html
+
 
 colorscheme gruvbox
 "colorscheme nightfly
