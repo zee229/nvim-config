@@ -18,6 +18,7 @@ set expandtab
 set autoindent
 set fileformat=unix
 
+let mapleader = "<Space>"
 inoremap jk <esc>
 
 call plug#begin('~/.vim/plugged')
@@ -155,6 +156,11 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ CheckBackspace() ? "\<TAB>" :
       \ coc#refresh()
+
+
+
+
+
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 function! CheckBackspace() abort
   let col = col('.') - 1
