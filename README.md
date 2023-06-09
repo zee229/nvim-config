@@ -33,6 +33,7 @@ gy - coc-type-definition,
 gi - coc-implementation,
 gr - coc-references,
 yy - copy current line (yank),
-p - paste copied line after it,
+p - paste copied line after selected,
+Shift - p paste copie line before selected,
 Ctrl+up/down - moving line up/down
 ```
