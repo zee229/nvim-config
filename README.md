@@ -31,5 +31,8 @@ jk - escape to NORMAL mode,
 gd - coc-defenition,
 gy - coc-type-definition,
 gi - coc-implementation,
-gr - coc-references
+gr - coc-references,
+yy - copy current line (yank),
+p - paste copied line after it,
+Ctrl+up/down - moving line up/down
 ```
