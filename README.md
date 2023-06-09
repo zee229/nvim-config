@@ -1,8 +1,8 @@
 # My configs for neo/vim
-# neovim
+## neovim
 >with COC installed clangd, coc-python
 
-##BINDS:
+### BINDS:
 >[ compilers ] 
 ```
 F8 - compile cpp,
@@ -37,10 +37,10 @@ Shift - p paste copie line before selected,
 Ctrl+up/down - moving line up/down
 ```
 
-# vim
+## vim
 >my VIM config for c++
 
-##BINDS:
+### BINDS:
 >[ compiler ]
 ```
 F9 - compile .cpp file,
