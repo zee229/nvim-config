@@ -71,8 +71,9 @@ autocmd filetype python nnoremap <F10> :w <bar> vsplit term://python3 %<CR>
 nnoremap <F11> :w <bar> vsplit term://python3 -m http.server<CR>
 
 " creating file templates (cpp,html)
-autocmd BufNewFile *.cpp 0r /home/zee/Documents/vims/template/template.cpp
-autocmd BufNewFile *.html 0r /home/zee/Documents/vims/template/template.html
+autocmd BufNewFile *.cpp 0r ~/.config/nvim/template/template.cpp
+autocmd BufNewFile *.html 0r ~/.config/nvim/template/template.html
+autocmd BufNewFile *.c 0r ~/.config/nvim/template/template.c
 
 "moving lines down/up
 nnoremap <C-down> :move +1<CR>
