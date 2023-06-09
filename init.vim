@@ -59,6 +59,11 @@ inoremap {} {}
 autocmd filetype cpp nnoremap <F8> :w <bar> !g++ % -o %:r<CR>
 autocmd filetype cpp nnoremap <F9> :!./%:r<CR>
 autocmd filetype cpp nnoremap <F10> :vsplit term://./%:r<CR>
+
+autocmd filetype c nnoremap <F8> :w <bar> !gcc % -o %:r<CR>
+autocmd filetype c nnoremap <F9> :!./%:r<CR>
+autocmd filetype c nnoremap <F10> :vsplit term://./%:r<CR>
+
 autocmd filetype python nnoremap <F9> :w <bar> !python3 %<CR>
 autocmd filetype python nnoremap <F10> :w <bar> vsplit term://python3 %<CR>
 
