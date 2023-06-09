@@ -69,7 +69,12 @@ nnoremap <F11> :w <bar> vsplit term://python3 -m http.server<CR>
 autocmd BufNewFile *.cpp 0r /home/zee/Documents/vims/template/template.cpp
 autocmd BufNewFile *.html 0r /home/zee/Documents/vims/template/template.html
 
+"moving rows down/up
+nnoremap <C-down> :move +1<CR>
+nnoremap <C-up> :move -2<CR>
 
+
+"colorschemes
 colorscheme gruvbox
 "colorscheme nightfly
 " Vim Script
