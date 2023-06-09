@@ -1,9 +1,8 @@
-# vim_configs
-my configs for vim/neovim
+# My configs for neo/vim
+## neovim
+>with COC installed clangd, coc-python
 
-## config for neovim
-with COC installed clangd, coc-python
-###BINDS:
+### BINDS:
 >[ compilers ] 
 ```
 F8 - compile cpp,
@@ -36,4 +35,14 @@ yy - copy current line (yank),
 p - paste copied line after selected,
 Shift - p paste copie line before selected,
 Ctrl+up/down - moving line up/down
+```
+
+## vim
+>my VIM config for c++
+
+### BINDS:
+>[ compiler ]
+```
+F9 - compile .cpp file,
+F10 - run .cpp file
 ```
