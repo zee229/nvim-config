@@ -1,6 +1,7 @@
 # My configs for neo/vim
 # neovim
 >with COC installed clangd, coc-python
+
 ##BINDS:
 >[ compilers ] 
 ```
@@ -38,6 +39,7 @@ Ctrl+up/down - moving line up/down
 
 # vim
 >my VIM config for c++
+
 ##BINDS:
 >[ compiler ]
 ```
