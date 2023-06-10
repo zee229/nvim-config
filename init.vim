@@ -18,7 +18,7 @@ set expandtab
 set autoindent
 set fileformat=unix
 
-let mapleader = "<Space>"
+let mapleader = " "
 inoremap jk <esc>
 
 call plug#begin('~/.vim/plugged')
