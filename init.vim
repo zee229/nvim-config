@@ -132,8 +132,15 @@ endfunction
 " Tabs
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemode=':t'
+
+" switching tabs <leader>+1/2
+nnoremap <A-left> :bp<CR>
+nnoremap <A-right> :bn<CR>
+
+" switching tabs <leader>+1/2
 nmap <leader>1 :bp<CR>
 nmap <leader>2 :bn<CR>
+
 nmap <C-w> :bd<CR>
 
 " Ultisnips
