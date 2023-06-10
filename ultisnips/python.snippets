@@ -1,0 +1,73 @@
+snippet ifmain "if __name__ == __main__" 
+def $1():
+	pass
+
+if __name__ == '__main__':
+	${1:main}()
+endsnippet
+
+snippet readfile "reading file" b
+with open($1) as f:
+	test = f.read()
+endsnippet
+
+snippet class1 "simple class skeleton with init and str magic methods" b
+class ${1:name}${2:(object)}:
+	def __init__(self, ${4:var}):
+		self.${4:var} = ${4:var}
+	
+	def __str__(self):
+		return '${1:name}@{:#x}: {}'.format(id(self), self.${4:var})
+endsnippet
+
+snippet class2 "class definition with docstring" b
+class ${1:name}${2:(object)}:
+	${3:docstring}
+
+	def __init__(self, ${4:var}):
+		self.${4:var} = ${4:var}
+	
+	def __str__(self):
+		return '${1:name}@{:#x}: {}'.format(id(self), self.${4:var})
+endsnippet
+
+snippet decor "function decorator" b
+def ${1:name}(fn):
+	def ${1:name}_wrapper(*args, **kwargs):
+		print('{}: args={} kwargs={}'.format(fn.__name__, args, kwargs))
+		return fn(*args, **kwargs)
+	return ${1:name}_wrapper
+endsnippet
+
+snippet eprop "encapsulated property getter, setter and deleter" b
+@poperty
+def ${1:name}(self):
+	return self.__${1:name}
+@${1:name}.setter
+def ${1:name}(self, value):
+	self.__${1:name} = value
+@${1:name}.deleter
+def ${1:name}(self, value):
+	del self.${1:name}
+endsnippet
+
+snippet prop1 "property getter, setter and deleter" b
+@property
+def ${1:name}(self):
+	return self.${1:name}
+@${1:name}.setter
+def ${1:name}(self, value):
+	self.${1:name} = value
+@${1:name}.deleter
+def ${1:name}(self, value):
+	del self.${1:name}
+endsnippet
+
+snippet prop2 "property getter and setter" b
+@property
+def ${1:name}(self):
+	return self.${1:name}
+@${1:name}.setter
+def ${1:name}(self, value):
+	self.${1:name} = value
+endsnippet
