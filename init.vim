@@ -25,11 +25,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-python'
-"Plug 'neoclide/coc-tsserver'
-
 
 Plug 'morhetz/gruvbox'
-"Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'norcalli/nvim-colorizer.lua'
@@ -45,6 +42,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'folke/tokyonight.nvim'
 Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
 
+Plug 'ycm-core/YouCompleteMe'
 
 
 call plug#end()
@@ -75,23 +73,12 @@ autocmd BufNewFile *.cpp 0r ~/.config/nvim/template/template.cpp
 autocmd BufNewFile *.html 0r ~/.config/nvim/template/template.html
 autocmd BufNewFile *.c 0r ~/.config/nvim/template/template.c
 
-"moving lines down/up
+" moving lines down/up
 nnoremap <C-down> :move +1<CR>
 nnoremap <C-up> :move -2<CR>
 
-
-"colorschemes
+" current colorscheme (gruvobx)
 colorscheme gruvbox
-"colorscheme nightfly
-" Vim Script
-"colorscheme tokyonight
-
-" There are also colorschemes for the different styles
-"colorscheme tokyonight-night
-"colorscheme tokyonight-storm
-"colorscheme tokyonight-day
-"colorscheme tokyonight-moon
-
 
 let g:airline_theme='gruvbox'
 
