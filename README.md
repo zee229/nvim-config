@@ -18,7 +18,9 @@ l - right
 ```
 >[ nerd ] 
 ```
-F2 - open NERDTree 
+F2 - open NERDTree,
+Alt+left - open previous NERDTree tab,
+Alt+right - open next NERDTree tab
 ```
 >[ text editing ]
 ```
