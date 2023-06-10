@@ -20,7 +20,8 @@ l - right
 ```
 F2 - open NERDTree,
 Alt+left - open previous NERDTree tab,
-Alt+right - open next NERDTree tab
+Alt+right - open next NERDTree tab,
+Alt+w - close tab
 ```
 >[ text editing ]
 ```
