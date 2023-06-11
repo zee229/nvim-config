@@ -77,6 +77,9 @@ autocmd BufNewFile *.c 0r ~/.config/nvim/template/template.c
 nnoremap <C-down> :move +1<CR>
 nnoremap <C-up> :move -2<CR>
 
+" toggle search highlight
+nnoremap <C-i> :set hlsearch!<CR>
+
 " current colorscheme (gruvobx)
 colorscheme gruvbox
 
