@@ -62,8 +62,8 @@ autocmd filetype c nnoremap <F8> :w <bar> !gcc % -o %:r<CR>
 autocmd filetype c nnoremap <F9> :!./%:r<CR>
 autocmd filetype c nnoremap <F10> :vsplit term://./%:r<CR>
 
-autocmd filetype python nnoremap <F9> :w <bar> !python3 %<CR>
-autocmd filetype python nnoremap <F10> :w <bar> vsplit term://python3 %<CR>
+autocmd filetype python nnoremap <F9> :w <bar> !python %<CR>
+autocmd filetype python nnoremap <F10> :w <bar> vsplit term://python %<CR>
 
 " python http.server localhost:8000
 nnoremap <F11> :w <bar> vsplit term://python3 -m http.server<CR>
