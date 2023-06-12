@@ -4,9 +4,9 @@
 ## BINDS:
 ### [ compilers ] 
 ```
-F8 - compile cpp,
-F9 - run py,cpp (without cmd input), 
-F10 - run py,cpp (with cmd input)
+F8 - compile c/cpp,
+F9 - run py,c/cpp (without cmd input), 
+F10 - run py,c/cpp (with cmd input)
 ````
 #### [ moving ] 
 ```
@@ -19,7 +19,6 @@ G - goto last row,
 w - (word) move to next word,
 b - (back word) move to prev word,
 e - go to the end of next word
-
 ```
 ### [ nerd ] 
 ```
