@@ -14,6 +14,12 @@ j - line up,
 k - line down, 
 h - left, 
 l - right
+gg - goto first row,
+G - goto last row,
+w - (word) move to next word,
+b - (back word) move to prev word,
+e - go to the end of next word
+
 ```
 ### [ nerd ] 
 ```
@@ -43,11 +49,6 @@ D - delete left part of the rom from cursor,
 V - select full row (and you can go top/bot with up/down to select others),
 q<number> - start/stop recording macros with number (in it use commands),
 @<number> - use macros (and we can use numbers before it to do it n times),
-gg - goto first row,
-G - goto last row,
-w - (word) move to next word,
-b - (back word) move to prev word,
-e - go to the end of next word
 Ctrl+/ - comment,
 dd (in NORMAL) - delete line,
 cc (in NORMAL) - clear line,
