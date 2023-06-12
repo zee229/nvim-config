@@ -1,29 +1,28 @@
-# My configs for neo/vim
-## neovim
+# My config and cheatsheet for neovim
 >with COC installed clangd, coc-python
 
-### BINDS:
->[ compilers ] 
+## BINDS:
+### [ compilers ] 
 ```
 F8 - compile cpp,
 F9 - run py,cpp (without cmd input), 
 F10 - run py,cpp (with cmd input)
 ````
->[ moving ] 
+#### [ moving ] 
 ```
 j - line up, 
 k - line down, 
 h - left, 
 l - right
 ```
->[ nerd ] 
+### [ nerd ] 
 ```
 F2 - open NERDTree,
 Alt+left - open previous NERDTree tab,
 Alt+right - open next NERDTree tab,
 Alt+w - close tab
 ```
->[ text editing ]
+### [ text editing ]
 ```
 i - enter to insert mode,
 a - cursor +1 to right and enter insert mode,
@@ -66,13 +65,3 @@ Ctrl+up/down - moving line up/down
 p.s.
 also you can use number+command to use command n times
 (for example 2w)
-
-## vim
->my VIM config for c++
-
-### BINDS:
->[ compiler ]
-```
-F9 - compile .cpp file,
-F10 - run .cpp file
-```
