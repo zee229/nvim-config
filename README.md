@@ -1,5 +1,5 @@
 # My config and cheatsheet for neovim
->with COC installed clangd, coc-python
+>with COC installed coc-clangd, coc-python, coc-htmldjango
 
 ## BINDS:
 ### [ compilers ] 
