@@ -44,7 +44,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'folke/tokyonight.nvim'
 Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
 
-Plug 'ycm-core/YouCompleteMe'
+"Plug 'ycm-core/YouCompleteMe'
 
 
 call plug#end()
