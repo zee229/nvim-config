@@ -26,12 +26,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-python'
 Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
+Plug 'yaegassy/coc-pydocstring', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airlhtmldjangoine'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sirver/ultisnips'
 
@@ -78,6 +79,11 @@ autocmd BufNewFile *.c 0r ~/.config/nvim/template/template.c
 " moving lines down/up
 nnoremap <C-down> :move +1<CR>
 nnoremap <C-up> :move -2<CR>
+
+" pydocstring
+nmap <silent> ga <Plug>(coc-codeaction-line)
+xmap <silent> ga <Plug>(coc-codeaction-selected)
+nmap <silent> gA <Plug>(coc-codeaction)
 
 " toggle search highlight
 nnoremap <C-i> :set hlsearch!<CR>
