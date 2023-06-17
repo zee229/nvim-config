@@ -25,14 +25,15 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-python'
-Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
 Plug 'yaegassy/coc-pydocstring', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'vim-airline/vim-airlhtmldjangoine'
+"Plug 'vim-airline/vim-airlhtmldjangoine'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sirver/ultisnips'
 
@@ -46,6 +47,7 @@ Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
 
 "Plug 'ycm-core/YouCompleteMe'
 
+Plug 'ayu-theme/ayu-vim' "test color scheme
 
 call plug#end()
 
@@ -88,10 +90,17 @@ nmap <silent> gA <Plug>(coc-codeaction)
 " toggle search highlight
 nnoremap <C-i> :set hlsearch!<CR>
 
-" current colorscheme (gruvobx)
-colorscheme gruvbox
+" COLORSCHEMAS
+" colorscheme gruvobx
+"colorscheme gruvbox
+"let g:airline_theme='gruvbox'
 
-let g:airline_theme='gruvbox'
+" colorscheme ayu
+set termguicolors     " enable true colors support
+"let ayoucolor="light"
+let ayucolor="mirage" " for mirage version of theme
+"let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 
 if (has("termguicolors"))
     set termguicolors
@@ -115,7 +124,6 @@ augroup NTStartup
     autocmd!
     autocmd VimEnter * call NERDTreeAddPathFilter('MyFilter')
 augroup END
-
 function! MyFilter(params)
     return a:params['path'].isExecutable
 endfunction
@@ -126,7 +134,7 @@ noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " sync open file with NERDTree
-" " Check if NERDTree is open or active
+" Check if NERDTree is open or active
 function! IsNERDTreeOpen()        
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
@@ -140,9 +148,166 @@ function! SyncTree()
   endif
 endfunction
 
+" Airline Themes
+let g:airline_theme='transparent'
+" Colors
+let s:gray     = [245, '#3f4b59']
+let s:darkgray = [245, '#1d1f21']
+let s:golden   = [143, '#BBE67E']
+let s:pink     = [131, '#F07178']
+let s:blue     = [ 67, '#D4BFFF']
+let s:orange   = [166, '#ffae57']
+let s:outerfg  = [ 16, '#8d96a1']
+let s:outerfgi = [ 16, '#2f3d4d']
+
+" Backgrounds
+let s:outerbg  = [ 16, 'NONE']
+let s:innerbg  = [234, 'NONE']
+
+" Normal mode
+let s:N1 = [s:outerfg[1], s:outerbg[1], s:outerfg[0], s:gray[0]]
+let s:N3 = [s:gray[1]   , s:innerbg[1], s:gray[0]   , s:innerbg[0]]
+
+" Normal mode - modified
+let s:NM1 = [s:darkgray[1], s:orange[1], s:darkgray[0], s:orange[0]]
+let s:NM3 = [s:orange[1]  , s:outerbg[1], s:orange[0], s:darkgray[0]]
+
+" Insert mode
+let s:I1 = [s:darkgray[1], s:golden[1], s:outerfg[0], s:golden[0]]
+let s:I3 = [s:golden[1]  , s:innerbg[1], s:golden[0], s:innerbg[0]]
+
+" Visual mode
+let s:V1 = [s:darkgray[1], s:pink[1], s:outerfg[0], s:pink[0]]
+let s:V3 = [s:pink[1]    , s:innerbg[1], s:pink[0], s:innerbg[0]]
+
+" Replace mode
+let s:R1 = [s:darkgray[1], s:blue[1], s:outerfg[0], s:blue[0]]
+let s:R3 = [s:blue[1], s:innerbg[1], s:blue[0], s:innerbg[0]]
+
+" Inactive pane
+let s:IA = [s:darkgray[1], s:outerbg[1], s:innerbg[0], s:innerbg[0]]
+let s:IAc = [s:gray[1], s:outerbg[1], s:outerbg[0], s:outerbg[0]]
+
+let g:airline#themes#transparent#palette = {}
+let g:airline#themes#transparent#palette.accents = {
+    \ 'red': ['#d70000', '', 160, '', '']}
+
+let g:airline#themes#transparent#palette.inactive = {
+    \ 'airline_a': s:IA,
+    \ 'airline_b': s:IA,
+    \ 'airline_c': s:IAc,
+    \ 'airline_x': s:IA,
+    \ 'airline_y': s:IA,
+    \ 'airline_z': s:IA}
+
+let g:airline#themes#transparent#palette.inactive_modified = {
+    \ 'airline_a': s:IA,
+    \ 'airline_b': s:IA,
+    \ 'airline_c': s:NM3,
+    \ 'airline_x': s:IA,
+    \ 'airline_y': s:IA,
+    \ 'airline_z': s:IA}
+
+let g:airline#themes#transparent#palette.normal = {
+    \ 'airline_a': s:N1,
+    \ 'airline_b': s:N3,
+    \ 'airline_c': s:N3,
+    \ 'airline_x': s:N3,
+    \ 'airline_y': s:N3,
+    \ 'airline_z': s:N3}
+
+let g:airline#themes#transparent#palette.normal_modified = {
+    \ 'airline_a': s:NM1,
+    \ 'airline_b': s:N3,
+    \ 'airline_c': s:N3,
+    \ 'airline_x': s:N3,
+    \ 'airline_y': s:N3,
+    \ 'airline_z': s:NM3}
+
+let g:airline#themes#transparent#palette.insert = {
+    \ 'airline_a': s:I1,
+    \ 'airline_b': s:N3,
+    \ 'airline_c': s:N3,
+    \ 'airline_x': s:N3,
+    \ 'airline_y': s:N3,
+    \ 'airline_z': s:I3}
+let g:airline#themes#transparent#palette.insert_modified = {}
+
+let g:airline#themes#transparent#palette.replace = {
+    \ 'airline_a': s:R1,
+    \ 'airline_b': s:N3,
+    \ 'airline_c': s:N3,
+    \ 'airline_x': s:N3,
+    \ 'airline_y': s:N3,
+    \ 'airline_z': s:R3}
+let g:airline#themes#transparent#palette.replace_modified = {}
+
+let g:airline#themes#transparent#palette.visual = {
+    \ 'airline_a': s:V1,
+    \ 'airline_b': s:N3,
+    \ 'airline_c': s:N3,
+    \ 'airline_x': s:N3,
+    \ 'airline_y': s:N3,
+    \ 'airline_z': s:V3}
+let g:airline#themes#transparent#palette.visual_modified = {}
+
+
+" Warnings
+let g:airline#themes#transparent#palette.normal.airline_warning = s:NM1
+
+let g:airline#themes#transparent#palette.normal_modified.airline_warning =
+    \ g:airline#themes#transparent#palette.normal.airline_warning
+
+let g:airline#themes#transparent#palette.insert.airline_warning =
+    \ g:airline#themes#transparent#palette.normal.airline_warning
+
+let g:airline#themes#transparent#palette.insert_modified.airline_warning =
+    \ g:airline#themes#transparent#palette.normal.airline_warning
+
+let g:airline#themes#transparent#palette.visual.airline_warning =
+    \ g:airline#themes#transparent#palette.normal.airline_warning
+
+let g:airline#themes#transparent#palette.visual_modified.airline_warning =
+    \ g:airline#themes#transparent#palette.normal.airline_warning
+
+let g:airline#themes#transparent#palette.replace.airline_warning =
+    \ g:airline#themes#transparent#palette.normal.airline_warning
+
+let g:airline#themes#transparent#palette.replace_modified.airline_warning =
+    \ g:airline#themes#transparent#palette.normal.airline_warning
+
+
+" Errors
+let g:airline#themes#transparent#palette.normal.airline_error = s:V1
+
+let g:airline#themes#transparent#palette.normal_modified.airline_error =
+      \ g:airline#themes#transparent#palette.normal.airline_error
+
+let g:airline#themes#transparent#palette.insert.airline_error =
+      \ g:airline#themes#transparent#palette.normal.airline_error
+
+let g:airline#themes#transparent#palette.insert_modified.airline_error =
+      \ g:airline#themes#transparent#palette.normal.airline_error
+
+let g:airline#themes#transparent#palette.insert_modified.airline_error =
+      \ g:airline#themes#transparent#palette.normal.airline_error
+ 
+let g:airline#themes#transparent#palette.visual.airline_error =
+      \ g:airline#themes#transparent#palette.normal.airline_error
+
+let g:airline#themes#transparent#palette.visual_modified.airline_error =
+      \ g:airline#themes#transparent#palette.normal.airline_error
+ 
+let g:airline#themes#transparent#palette.replace.airline_error =
+      \ g:airline#themes#transparent#palette.normal.airline_error
+
+let g:airline#themes#transparent#palette.replace_modified.airline_error =
+      \ g:airline#themes#transparent#palette.normal.airline_error
+
 " Tabs
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemode=':t'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " switching tabs <leader>+1/2
 nnoremap <A-left> :bp<CR>
@@ -151,18 +316,13 @@ nnoremap <A-right> :bn<CR>
 "close tab
 nmap <A-w> :bd<CR>
 
-" switching tabs <leader>+1/2
-" nmap <leader>1 :bp<CR>
-" nmap <leader>2 :bn<CR>
-" nmap <C-w> :bd<CR>
-
-
 " Ultisnips
-"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/ultisnips']
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" column for python
 autocmd FileType python set colorcolumn=79
 
 " coc config
@@ -173,6 +333,8 @@ let g:coc_global_extensions = [
     \ 'coc-eslint',
     \ 'coc-prettier',
     \ 'coc-json',
+    \ 'coc-clangd',
+    \ 'coc-python'
     \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -182,9 +344,6 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ CheckBackspace() ? "\<TAB>" :
       \ coc#refresh()
-
-
-
 
 
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
@@ -313,4 +472,3 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
