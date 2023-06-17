@@ -116,8 +116,28 @@ vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 " NERDTree (F2)
 let NERDTreeQuitOnOpen=1
 let g:NERDTreeMinimalUI=1
+let NERDTreeDirArrows = 1
 let g:NERDTreeGitStatusWithFlags = 1
+let g:NERDTreeGitStatusConcealBrackets = 1
+
 nmap <F2> :NERDTreeToggle<CR>
+
+" Open nerdtree window on opening Vim
+autocmd VimEnter * NERDTree
+
+" Refresh the current folder if any changes
+autocmd BufEnter NERD_tree_* | execute 'normal R'
+au CursorHold * if exists("t:NerdTreeBufName") | call <SNR>15_refreshRoot() | endif
+
+"Reload the window if directory is changed
+augroup DIRCHANGE
+    au!
+    autocmd DirChanged global :NERDTreeCWD
+augroup END
+
+"Close nerdtree automatically if it is theonly window open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 
 " Ignoring executable files in nerdtree
 augroup NTStartup
