@@ -1,0 +1,13 @@
+{
+  "snippets.ultisnips.pythonPrompt": false,
+
+  "clangd.enabled": true,
+  "clangd.path": "/usr/bin/clangd",
+  "clangd.arguments": ["-c++-std=c++17"],
+
+  "python.jediEnabled": false,
+  "pydocstring.enable": true,
+  "json.enable": true,
+  "htmldjango.enable": true,
+  "css.format.enable": true
+}
