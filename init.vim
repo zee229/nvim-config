@@ -28,26 +28,26 @@ Plug 'neoclide/coc-python'
 "Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
 Plug 'yaegassy/coc-pydocstring', {'do': 'yarn install --frozen-lockfile'}
 
-Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox' "gruvbox color scheme
 Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'norcalli/nvim-colorizer.lua'
 "Plug 'vim-airline/vim-airlhtmldjangoine'
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline' "tabs and panels
 Plug 'vim-airline/vim-airline-themes'
-Plug 'sirver/ultisnips'
+"Plug 'sirver/ultisnips'
 
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin' "git in NERDTree
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-Plug 'folke/tokyonight.nvim'
-Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
 
 "Plug 'ycm-core/YouCompleteMe'
 
-Plug 'ayu-theme/ayu-vim' "test color scheme
+Plug 'jmcantrell/vim-virtualenv' "py venv
+Plug 'airblade/vim-gitgutter'
+
+Plug 'ayu-theme/ayu-vim' "ayu color scheme
 
 call plug#end()
 
@@ -167,6 +167,17 @@ function! SyncTree()
     wincmd p
   endif
 endfunction
+
+
+"function! AirLineInit()
+    "let g:airline_section_a = airline#section#create(['mode',' ','branch'])
+    "let g:airline_section_b = airline#section#create_left(['ffenc','hunks','%f'])
+    "let g:airline_section_c = airline#section#create(['filetype'])
+    "let g:airline_section_x = airline#section#create(['%P'])
+    "let g:airline_section_y = airline#section#create(['%B'])
+    "let g:airline_section_z = airline#section#create_right(['%l','%c'])
+"endfunction
+"autocmd VimEnter * call AirLineInit()
 
 " Airline Themes
 let g:airline_theme='transparent'
@@ -337,10 +348,10 @@ nnoremap <A-right> :bn<CR>
 nmap <A-w> :bd<CR>
 
 " Ultisnips
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/ultisnips']
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/ultisnips']
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " column for python
 autocmd FileType python set colorcolumn=79
