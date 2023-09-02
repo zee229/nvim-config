@@ -125,7 +125,7 @@ let g:NERDTreeGitStatusConcealBrackets = 1
 nmap <F2> :NERDTreeToggle<CR>
 
 " Open nerdtree window on opening Vim
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 
 " Refresh the current folder if any changes
 autocmd BufEnter NERD_tree_* | execute 'normal R'
