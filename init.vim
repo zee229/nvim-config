@@ -1,6 +1,3 @@
-" Vim with all enhancements
-"source $VIMRUNTIME/vimrc_example.vim
-"windows keys
 source $VIMRUNTIME/mswin.vim
 
 set mouse=a
@@ -21,12 +18,12 @@ set fileformat=unix
 let mapleader = " "
 inoremap jk <esc>
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
+"call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-python'
-"Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
 Plug 'yaegassy/coc-pydocstring', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-python'
 
 Plug 'morhetz/gruvbox' "gruvbox color scheme
 Plug 'scrooloose/nerdtree'
@@ -57,7 +54,7 @@ inoremap {<CR> {<CR>}<Esc>O
 inoremap {{ {
 inoremap {} {}
 
-"compilion binds
+"compilation/run programm binds
 autocmd filetype cpp nnoremap <F8> :w <bar> !g++ % -o %:r<CR>
 autocmd filetype cpp nnoremap <F9> :!./%:r<CR>
 autocmd filetype cpp nnoremap <F10> :vsplit term://./%:r<CR>
@@ -69,11 +66,22 @@ autocmd filetype c nnoremap <F10> :vsplit term://./%:r<CR>
 autocmd filetype python nnoremap <F9> :w <bar> !python %<CR>
 autocmd filetype python nnoremap <F10> :w <bar> vsplit term://python %<CR>
 
+autocmd filetype js nnoremap <F9> :w <bar> !node %<CR>
+autocmd filetype js nnoremap <F10> :w <bar> vsplit term://node %<CR>
+
+autocmd filetype java nnoremap <F8> :w <bar> !javac %<CR>
+autocmd filetype java nnoremap <F9> :!java %<CR>
+autocmd filetype java nnoremap <F10> :w <bar> vsplit term://java %<CR>
+
+
+" open my terminal in new tab
+nnoremap <C-T> :tabnew +term<CR>
+
+" simple clear terminal tab
+"nnoremap <C-T> :tabnew term://sh<CR>
+
 " saving file by Ctrl+W
 nnoremap <C-W> :w<CR>
-
-" python http.server localhost:8000
-nnoremap <F11> :w <bar> vsplit term://python3 -m http.server<CR>
 
 " creating file templates (cpp,html)
 autocmd BufNewFile *.cpp 0r ~/.config/nvim/template/template.cpp
@@ -109,6 +117,9 @@ if (has("termguicolors"))
 endif
 
 lua require 'colorizer'.setup()
+
+" python3 host prog
+let g:python3_host_prog = expand('~/usr/bin/python3.11')
 
 " NEDRCommenter
 " comments on ctrl+/
@@ -347,7 +358,7 @@ nnoremap <A-left> :bp<CR>
 nnoremap <A-right> :bn<CR>
 
 "close tab
-nmap <A-w> :bd<CR>
+nmap <A-w> :bd!<CR>
 
 " Ultisnips
 "let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/ultisnips']
