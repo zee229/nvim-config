@@ -1,12 +1,12 @@
 # My config and cheatsheet for neovim
->with COC installed coc-clangd, coc-python, coc-htmldjango, coc-pydocstring
+>with COC installed coc-clangd, coc-python, coc-htmldjango, coc-pydocstring, coc-java, coc-tsserver
 
 ## BINDS:
 ### [ compilers ] 
 ```
 F8 - compile c/cpp,
-F9 - run py,c/cpp (without cmd input), 
-F10 - run py,c/cpp (with cmd input)
+F9 - run py,c/cpp/py/js/java (without cmd input), 
+F10 - run py,c/cpp/py/js/java (with cmd input)
 ````
 #### [ moving ] 
 ```
@@ -20,12 +20,13 @@ w - (word) move to next word,
 b - (back word) move to prev word,
 e - go to the end of next word
 ```
-### [ nerd ] 
+### [ nerdtree/tabs ] 
 ```
 F2 - open NERDTree,
-Alt+left - open previous NERDTree tab,
-Alt+right - open next NERDTree tab,
-Alt+w - close tab
+Alt+left - open previous tab,
+Alt+right - open next tab,
+Alt+w - close tab,
+Ctrl+t - open terminal in new tab
 ```
 ### [ text editing ]
 ```
