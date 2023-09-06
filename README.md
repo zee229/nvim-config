@@ -1,5 +1,5 @@
 # My config and cheatsheet for neovim
->with COC installed coc-clangd, coc-python, coc-htmldjango, coc-pydocstring, coc-java, coc-tsserver
+>with COC installed coc-clangd, coc-python, coc-htmldjango, coc-pydocstring, coc-java, coc-tsserver, coc-html
 
 ## BINDS:
 ### [ compilers ] 
@@ -61,7 +61,8 @@ gr - coc-references,
 yy - copy current line (yank),
 p - paste copied line after selected,
 Shift - p paste copie line before selected,
-Ctrl+up/down - moving line up/down
+Ctrl+up/down - moving line up/down,
+Tab/Shift+Tab - selected text tabulation (in SELECT mode)
 ```
 p.s.
 also you can use number+command to use command n times
