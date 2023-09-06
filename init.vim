@@ -77,6 +77,9 @@ autocmd filetype java nnoremap <F10> :w <bar> vsplit term://java %<CR>
 " open my terminal in new tab
 nnoremap <C-T> :tabnew +term<CR>
 
+" webpage live preview in browser
+nn <F6> <cmd>!browser-sync start --server --files "*.js, *.html, *.css"<CR>
+
 " simple clear terminal tab
 "nnoremap <C-T> :tabnew term://sh<CR>
 
