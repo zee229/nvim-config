@@ -73,6 +73,8 @@ autocmd filetype java nnoremap <F8> :w <bar> !javac %<CR>
 autocmd filetype java nnoremap <F9> :!java %<CR>
 autocmd filetype java nnoremap <F10> :w <bar> vsplit term://java %<CR>
 
+autocmd filetype go nnoremap <F9> :!go run %<CR>
+autocmd filetype go nnoremap <F10> :w <bar> vsplit term://go run %<CR>
 
 " open my terminal in new tab
 nnoremap <C-T> :tabnew +term<CR>
