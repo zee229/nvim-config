@@ -66,8 +66,8 @@ autocmd filetype c nnoremap <F10> :vsplit term://./%:r<CR>
 autocmd filetype python nnoremap <F9> :w <bar> !python %<CR>
 autocmd filetype python nnoremap <F10> :w <bar> vsplit term://python %<CR>
 
-autocmd filetype js nnoremap <F9> :w <bar> !node %<CR>
-autocmd filetype js nnoremap <F10> :w <bar> vsplit term://node %<CR>
+autocmd filetype javascript nnoremap <F9> :w <bar> !node %<CR>
+autocmd filetype javascript nnoremap <F10> :w <bar> vsplit term://node %<CR>
 
 autocmd filetype java nnoremap <F8> :w <bar> !javac %<CR>
 autocmd filetype java nnoremap <F9> :!java %<CR>
