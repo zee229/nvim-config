@@ -103,6 +103,10 @@ nmap <silent> gA <Plug>(coc-codeaction)
 " toggle search highlight
 nnoremap <C-i> :set hlsearch!<CR>
 
+" tabulation in select mode on tab/shift-tab
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+
 " COLORSCHEMAS
 " colorscheme gruvobx
 "colorscheme gruvbox
