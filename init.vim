@@ -21,6 +21,8 @@ inoremap jk <esc>
 call plug#begin('~/.config/nvim/plugged')
 "call plug#begin('~/.vim/plugged')
 
+Plug 'AndrewRadev/tagalong.vim' " Using tagalong we can change the opening tag and automatically change the corresponding closing one.
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'yaegassy/coc-pydocstring', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-python'
@@ -127,6 +129,9 @@ endif
 
 lua require 'colorizer'.setup()
 
+" visual feedback when text is edited (html)
+let g:tagalong_verbose = 1
+
 " python3 host prog
 let g:python3_host_prog = expand('~/usr/bin/python3.11')
 
@@ -190,6 +195,11 @@ function! SyncTree()
   endif
 endfunction
 
+" list of file extensions to ignore
+set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
+
+" Nerdtree config for wildignore
+let NERDTreeRespectWildIgnore=1
 
 "function! AirLineInit()
     "let g:airline_section_a = airline#section#create(['mode',' ','branch'])
