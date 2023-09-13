@@ -46,7 +46,9 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jmcantrell/vim-virtualenv' "py venv
 Plug 'airblade/vim-gitgutter'
 
-Plug 'ayu-theme/ayu-vim' "ayu color scheme
+"Plug 'ayu-theme/ayu-vim' "ayu color scheme
+"Plug 'folke/tokyonight.nvim'
+Plug 'bluz71/vim-nightfly-colors'
 
 call plug#end()
 
@@ -81,14 +83,17 @@ autocmd filetype go nnoremap <F10> :w <bar> vsplit term://go run %<CR>
 " open my terminal in new tab
 nnoremap <C-T> :tabnew +term<CR>
 
+" split window vertical
+nnoremap <C-e> :vsplit<CR>
+
 " webpage live preview in browser
 nn <F6> <cmd>!browser-sync start --server --files "*.js, *.html, *.css"<CR>
 
 " simple clear terminal tab
 "nnoremap <C-T> :tabnew term://sh<CR>
 
-" saving file by Ctrl+W
-nnoremap <C-W> :w<CR>
+" saving file by Ctrl+S
+nnoremap <C-S> :w<CR>
 
 " creating file templates (cpp,html)
 autocmd BufNewFile *.cpp 0r ~/.config/nvim/template/template.cpp
@@ -116,12 +121,15 @@ vmap <S-Tab> <gv
 "colorscheme gruvbox
 "let g:airline_theme='gruvbox'
 
+"colorscheme tokyonight
+colorscheme nightfly
+
 " colorscheme ayu
-set termguicolors     " enable true colors support
-"let ayoucolor="light"
-let ayucolor="mirage" " for mirage version of theme
-"let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+"set termguicolors     " enable true colors support
+""let ayoucolor="light"
+"let ayucolor="mirage" " for mirage version of theme
+""let ayucolor="dark"   " for dark version of theme
+"colorscheme ayu
 
 if (has("termguicolors"))
     set termguicolors

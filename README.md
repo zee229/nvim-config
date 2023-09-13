@@ -20,13 +20,21 @@ w - (word) move to next word,
 b - (back word) move to prev word,
 e - go to the end of next word
 ```
-### [ nerdtree/tabs ] 
+### [ nerdtree/tabs/windows ] 
 ```
 F2 - open NERDTree,
 Alt+left - open previous tab,
 Alt+right - open next tab,
 Alt+w - close tab,
 Ctrl+t - open terminal in new tab
+
+Ctrl+e - vertical window split
+Ctrl+w h - move to the window on the left
+Ctrl+w j - move to the window below
+Ctrl+w k - move to the window above
+Ctrl+w l - move to the window on the right
+Ctrl+w t - move to the TOP window
+Ctrl+w b - move to the BOTTOM window
 ```
 ### [ text editing ]
 ```
