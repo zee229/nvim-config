@@ -26,6 +26,7 @@ Plug 'AndrewRadev/tagalong.vim' " Using tagalong we can change the opening tag a
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'yaegassy/coc-pydocstring', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-python'
+Plug 'tweekmonster/django-plus.vim'
 
 Plug 'morhetz/gruvbox' "gruvbox color scheme
 Plug 'scrooloose/nerdtree'
@@ -115,6 +116,10 @@ nnoremap <C-i> :set hlsearch!<CR>
 " tabulation in select mode on tab/shift-tab
 vmap <Tab> >gv
 vmap <S-Tab> <gv
+
+" normal row numbers
+set norelativenumber
+set cursorline
 
 " COLORSCHEMAS
 " colorscheme gruvobx
