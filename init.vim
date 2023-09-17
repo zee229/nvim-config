@@ -27,6 +27,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'yaegassy/coc-pydocstring', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-python'
 Plug 'tweekmonster/django-plus.vim'
+"Plug 'davidhalter/jedi-vim'  " Python autocompletion
+"Plug 'vim-scripts/indentpython.vim' " Python indentation
+"Plug 'tpope/vim-surround'     " Surround text with quotes/brackets
+Plug 'linux-cultist/venv-selector.nvim'
+
 
 Plug 'morhetz/gruvbox' "gruvbox color scheme
 Plug 'scrooloose/nerdtree'
@@ -68,7 +73,7 @@ autocmd filetype c nnoremap <F8> :w <bar> !gcc % -o %:r<CR>
 autocmd filetype c nnoremap <F9> :!./%:r<CR>
 autocmd filetype c nnoremap <F10> :vsplit term://./%:r<CR>
 
-autocmd filetype python nnoremap <F9> :w <bar> !python %<CR>
+autocmd filetype python nnoremap <F9> :w <bar> !python3 %<CR>
 autocmd filetype python nnoremap <F10> :w <bar> vsplit term://python %<CR>
 
 autocmd filetype javascript nnoremap <F9> :w <bar> !node %<CR>
