@@ -4,6 +4,7 @@
 ## BINDS:
 ### [ compilers ] 
 ```
+F7 - flake8
 F8 - compile c/cpp,
 F9 - run py,c/cpp/py/js/java/go (without cmd input), 
 F10 - run py,c/cpp/py/js/java/go (with cmd input)

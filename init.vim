@@ -20,6 +20,7 @@ inoremap jk <esc>
 
 call plug#begin('~/.config/nvim/plugged')
 "call plug#begin('~/.vim/plugged')
+Plug 'nvie/vim-flake8'
 
 Plug 'AndrewRadev/tagalong.vim' " Using tagalong we can change the opening tag and automatically change the corresponding closing one.
 
@@ -31,7 +32,7 @@ Plug 'tweekmonster/django-plus.vim'
 "Plug 'vim-scripts/indentpython.vim' " Python indentation
 "Plug 'tpope/vim-surround'     " Surround text with quotes/brackets
 Plug 'linux-cultist/venv-selector.nvim'
-
+Plug 'yaegassy/coc-mypy', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'morhetz/gruvbox' "gruvbox color scheme
 Plug 'scrooloose/nerdtree'
@@ -85,6 +86,8 @@ autocmd filetype java nnoremap <F10> :w <bar> vsplit term://java %<CR>
 
 autocmd filetype go nnoremap <F9> :!go run %<CR>
 autocmd filetype go nnoremap <F10> :w <bar> vsplit term://go run %<CR>
+
+autocmd FileType python map <buffer> <F3> :call flake8#Flake8()<CR>
 
 " open my terminal in new tab
 nnoremap <C-T> :tabnew +term<CR>
