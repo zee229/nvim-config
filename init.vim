@@ -81,7 +81,7 @@ autocmd filetype javascript nnoremap <F9> :w <bar> !node %<CR>
 autocmd filetype javascript nnoremap <F10> :w <bar> vsplit term://node %<CR>
 
 autocmd filetype java nnoremap <F8> :w <bar> !javac %<CR>
-autocmd filetype java nnoremap <F9> :!java %<CR>
+autocmd filetype java nnoremap <F9> :!java %:r<CR>
 autocmd filetype java nnoremap <F10> :w <bar> vsplit term://java %<CR>
 
 autocmd filetype go nnoremap <F9> :!go run %<CR>
