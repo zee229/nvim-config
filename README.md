@@ -1,6 +1,6 @@
 # My config and cheatsheet for neovim
 >with vim-plug https://github.com/junegunn/vim-plug
->with COC installed coc-clangd, coc-python, coc-htmldjango, coc-pydocstring, coc-java, coc-tsserver, coc-html, coc-go
+>with COC installed coc-clangd, coc-python, coc-htmldjango, coc-pydocstring, coc-java, coc-tsserver, coc-html, coc-go, coc-emmet
 ## BINDS:
 ### [ compilers ] 
 ```

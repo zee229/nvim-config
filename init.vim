@@ -96,6 +96,7 @@ nnoremap <C-T> :tabnew +term<CR>
 nnoremap <C-e> :vsplit<CR>
 
 " webpage live preview in browser
+" browsersync install: `npm install -g browser-sync`
 nn <F6> <cmd>!browser-sync start --server --files "*.js, *.html, *.css"<CR>
 
 " simple clear terminal tab
