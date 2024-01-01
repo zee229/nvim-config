@@ -410,7 +410,7 @@ nmap <A-w> :bd!<CR>
 "let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " column for python
-autocmd FileType python set colorcolumn=79
+autocmd FileType python set colorcolumn=120
 
 " coc config
 let g:coc_global_extensions = [
