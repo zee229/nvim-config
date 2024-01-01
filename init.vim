@@ -57,6 +57,8 @@ Plug 'airblade/vim-gitgutter'
 "Plug 'folke/tokyonight.nvim'
 Plug 'bluz71/vim-nightfly-colors'
 
+Plug 'Exafunction/codeium.vim'
+
 call plug#end()
 
 "macros for {}
