@@ -27,6 +27,13 @@ Plug 'AndrewRadev/tagalong.vim' " Using tagalong we can change the opening tag a
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'yaegassy/coc-pydocstring', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-python'
+Plug 'clangd/coc-clangd'
+Plug 'neoclide/coc-java'
+Plug 'neoclide/coc-tsserver'
+Plug 'neoclide/coc-html'
+Plug 'neoclide/coc-emmet'
+Plug 'josa42/coc-go'
+Plug 'neoclide/coc-vetur'
 Plug 'tweekmonster/django-plus.vim'
 "Plug 'davidhalter/jedi-vim'  " Python autocompletion
 "Plug 'vim-scripts/indentpython.vim' " Python indentation
