@@ -178,6 +178,7 @@ let g:NERDTreeMinimalUI=1
 let NERDTreeDirArrows = 1
 let g:NERDTreeGitStatusWithFlags = 1
 let g:NERDTreeGitStatusConcealBrackets = 1
+let NERDTreeIgnore = ['^__pycache__$']  
 
 nmap <F2> :NERDTreeToggle<CR>
 
@@ -232,6 +233,7 @@ set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
 
 " Nerdtree config for wildignore
 let NERDTreeRespectWildIgnore=1
+let NERDTreeIgnore = ['^__pycache__$']
 
 "function! AirLineInit()
     "let g:airline_section_a = airline#section#create(['mode',' ','branch'])
@@ -548,7 +550,7 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set statusline=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Using CocList
 " Show all diagnostics
